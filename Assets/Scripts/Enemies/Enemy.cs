@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour{
 		_rb = gameObject.GetComponent<Rigidbody2D>();
 	}
 
-	private IEnumerator MoveToTurret(){
+	/*private IEnumerator MoveToTurret(){
 		
-	}
+	}*/
 	
 	
 }
