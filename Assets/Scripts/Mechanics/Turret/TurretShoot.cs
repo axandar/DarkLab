@@ -9,6 +9,7 @@ public class TurretShoot : MonoBehaviour {
     private bool _mousePressed;
     private bool _mousePressedLastFrame;
     private bool _shootCooldown;
+    private bool _shootBulletsCoroutineStarted;
     
     private void Update() {
         _mousePressed = Input.GetKey(KeyCode.Mouse0);
@@ -19,8 +20,12 @@ public class TurretShoot : MonoBehaviour {
         if (_mousePressed && !_mousePressedLastFrame) {
             StartCoroutine(ShootBulletsCoroutine());
         }
+        if (_mousePressed && _mousePressedLastFrame && !_shootBulletsCoroutineStarted) {
+           StartCoroutine(ShootBulletsCoroutine()); 
+        }
         if (!_mousePressed && _mousePressedLastFrame) {
             StopAllCoroutines();
+            _shootBulletsCoroutineStarted = false;
             StartCoroutine(ShootCooldownCoroutine());
         }
         _mousePressedLastFrame = _mousePressed;
@@ -33,6 +38,7 @@ public class TurretShoot : MonoBehaviour {
     }
 
     private IEnumerator ShootBulletsCoroutine() {
+        _shootBulletsCoroutineStarted = true;
         for (;;) {
             InstantiateBullet();
             yield return new WaitForSeconds(shootInterval);
