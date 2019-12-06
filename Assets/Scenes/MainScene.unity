@@ -221,6 +221,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d7eb40b597b5b48bf2b91e67149783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &521709948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3170692066770280659, guid: 71a70e979a299e54bb4e6802737a9ac1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2004390812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &521709949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521709946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abe2a62a75fd754daed06ed8158b6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3545222140199878588, guid: cdd935d0674882445a8ef9b330cf0c60,
+    type: 3}
+  bulletSpawnPoint: {fileID: 521709948}
+  shootInterval: 0.15
+  bulletSpeed: 8
 --- !u!1001 &2004390812
 PrefabInstance:
   m_ObjectHideFlags: 0
