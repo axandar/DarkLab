@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 5975847326929912602}
   - component: {fileID: -3229023688251529330}
   - component: {fileID: 5389953601836829594}
+  - component: {fileID: 2754355684434276163}
+  - component: {fileID: -4861605877084211589}
   m_Layer: 0
   m_Name: BulletTemplate
   m_TagString: Untagged
@@ -147,3 +149,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDestroyTime: 3.5
+--- !u!114 &2754355684434276163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545222140199878588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683575318703a194cafecf3b5cf08c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &-4861605877084211589
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545222140199878588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
