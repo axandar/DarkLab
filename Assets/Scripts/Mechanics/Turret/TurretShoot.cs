@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class TurretShoot : MonoBehaviour {
@@ -10,7 +11,13 @@ public class TurretShoot : MonoBehaviour {
     private bool _mousePressedLastFrame;
     private bool _shootCooldown;
     private bool _shootBulletsCoroutineStarted;
-    
+
+    private GameController _gameController;
+
+    private void Start() {
+        _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
+    }
+
     private void Update() {
         _mousePressed = Input.GetKey(KeyCode.Mouse0);
         if (_shootCooldown) {
@@ -49,5 +56,6 @@ public class TurretShoot : MonoBehaviour {
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
         var shootVector = transform.right;
         bullet.GetComponent<Rigidbody2D>().AddForce(bulletSpeed * shootVector,ForceMode2D.Impulse);
+        _gameController.TurretShotABullet();
     }
 }

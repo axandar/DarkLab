@@ -14,10 +14,12 @@ public class PortalSpawner : MonoBehaviour {
     private Vector2 _portalPrefabColliderSize;
 
     private Transform _turretTransform;
+    private GameController _gameController;
 
     private void Start() {
 	    _turretTransform = GameObject.FindGameObjectWithTag(Tags.TURRET).transform;
 	    _portalPrefabColliderSize = portalPrefab.GetComponent<BoxCollider2D>().size;
+	    _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
 	    StartCoroutine(SpawnPortalsCoroutine());
     }
 
@@ -56,6 +58,7 @@ public class PortalSpawner : MonoBehaviour {
 			    continue;
 		    }
 
+		    _gameController.PortalOpened();
 		    var instantiatedPortal = Instantiate(portalPrefab, spawnPosition, Quaternion.identity);
 		    break;
 	    }
