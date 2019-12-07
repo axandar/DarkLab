@@ -344,6 +344,31 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &741471270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 577879840037973840, guid: 3ea66683555bba849a898fb49fd591a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1473634493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &741471271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741471270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d343e0fc68bf21441a5ee5213d085e93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &894572631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1211,6 +1236,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 577879840037973855, guid: 3ea66683555bba849a898fb49fd591a7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a91f0267b4e02ed41964312356f1c30a,
+        type: 3}
     - target: {fileID: 577879840037973853, guid: 3ea66683555bba849a898fb49fd591a7,
         type: 3}
       propertyPath: darkSoldierHealthBar
