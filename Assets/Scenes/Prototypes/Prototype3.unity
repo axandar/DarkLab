@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da78bfca96e2aa41972b473ccdacf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeIntensity: 2
+  shakeIntensity: 0.05
 --- !u!1001 &894572631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
       propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
