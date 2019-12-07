@@ -413,24 +413,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: turretShotEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
-        type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: darkSoldierShotEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
       propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -438,29 +433,24 @@ PrefabInstance:
       objectReference: {fileID: 667364092}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Shake
-      objectReference: {fileID: 0}
+      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      propertyPath: enemyDestroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: laboratoryDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.5
-      objectReference: {fileID: 0}
+      propertyPath: darkSoldierDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
-        type: 3}
-      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: portalOpenedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
       propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -468,31 +458,19 @@ PrefabInstance:
       objectReference: {fileID: 1926688336}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPortalDestroyed
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
-        type: 3}
-      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
-        type: 3}
-      propertyPath: darkSoldierPrefab
+      propertyPath: portalClosedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 577879840037973840, guid: 3ea66683555bba849a898fb49fd591a7,
-        type: 3}
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: darkSoldierRespawnPosition
+      propertyPath: darkSoldierDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2792141934431655067, guid: 16edecfe2ef13b14abdd54e575b7af67,
-        type: 3}
+      objectReference: {fileID: 2120580116}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
-      propertyPath: timeForRespawn
-      value: 6
-      objectReference: {fileID: 0}
+      propertyPath: darkSoldierRespawnedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120580116}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca373dc5301853141bbb3cf145134539, type: 3}
 --- !u!1 &900554549
@@ -1260,6 +1238,87 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 531f47ce523bfe54495a667693635f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &2120580115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2348358454499761613, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348358454499761614, guid: 7b1fa080081146c41957cd2adf28febe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b1fa080081146c41957cd2adf28febe, type: 3}
+--- !u!114 &2120580116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2348358454499761615, guid: 7b1fa080081146c41957cd2adf28febe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2120580115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5068c411bc1ff04daf5b0fb7600cdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4660098081016071985
