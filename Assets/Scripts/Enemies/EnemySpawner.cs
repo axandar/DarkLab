@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour{
+public class EnemySpawner : SerializedMonoBehaviour{
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Dictionary<GameObject, float> enemyPrefabDictionary;
     [SerializeField] private Transform enemyHolderTransform;
