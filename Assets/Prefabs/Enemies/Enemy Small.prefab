@@ -7,45 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: speed
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: minTimeForNextShake
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: maxTimeForNextShake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: offsetX
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: offsetY
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: pointsForEnemy
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
-        type: 3}
-      propertyPath: damageToHP
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7245331649088799258, guid: 11cf3f3fbb725524ba59b3d3351471da,
         type: 3}
       propertyPath: m_Name
       value: Enemy Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 637727806811804206, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9142746
       objectReference: {fileID: 0}
     - target: {fileID: 9086643776497177348, guid: 11cf3f3fbb725524ba59b3d3351471da,
         type: 3}
@@ -112,10 +82,45 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 637727806811804206, guid: 11cf3f3fbb725524ba59b3d3351471da,
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.9142746
+      propertyPath: speed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: minTimeForNextShake
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: maxTimeForNextShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: offsetX
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: offsetY
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: pointsForEnemy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: damageToHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11cf3f3fbb725524ba59b3d3351471da, type: 3}

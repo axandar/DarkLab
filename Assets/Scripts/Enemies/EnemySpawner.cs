@@ -8,8 +8,8 @@ public class EnemySpawner : SerializedMonoBehaviour{
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
     [SerializeField] private float portalRadius;
-    
-    private void Start(){
+
+    private void Start() {
         StartCoroutine(SpawnEnemy());
     }
 

@@ -1,38 +1,58 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PortalSpawner : MonoBehaviour {
 	[SerializeField] private GameObject portalPrefab;
+	[SerializeField] private int maxAmountOfPortals;
 	[SerializeField] private float portalSpawnInterval;
 	[SerializeField] private float minimalDistanceToTurret;
 	[SerializeField] private float xSpawnOffset;
     [SerializeField] private float ySpawnOffset;
 
+    private int _amountOfPortals;
+    private Vector2 _portalPrefabColliderSize;
+
     private Transform _turretTransform;
 
     private void Start() {
 	    _turretTransform = GameObject.FindGameObjectWithTag(Tags.TURRET).transform;
+	    _portalPrefabColliderSize = portalPrefab.GetComponent<BoxCollider2D>().size;
 	    StartCoroutine(SpawnPortalsCoroutine());
     }
 
+    public void OnPortalDestroyed() {
+	    _amountOfPortals--;
+    }
+    
     private IEnumerator SpawnPortalsCoroutine() {
 	    for (;;) {
-		    SpawnPortal();
+		    if (_amountOfPortals < maxAmountOfPortals) {
+			    SpawnPortal();
+		    }
 		    yield return new WaitForSeconds(portalSpawnInterval);
 	    }
     }
 
     private void SpawnPortal() {
+	    _amountOfPortals++;
 	    for (;;) {
+		    bool collidingPortals = false;
 		    var spawnerPosition = transform.position;
 		    var xOffset = Random.Range(-xSpawnOffset, xSpawnOffset);
 		    var yOffset = Random.Range(-ySpawnOffset, ySpawnOffset);
 		    var spawnPosition = new Vector3(spawnerPosition.x + xOffset, spawnerPosition.y + yOffset);
 		    if (Vector3.Distance(_turretTransform.position, spawnPosition) < minimalDistanceToTurret) {
+			    continue;
+		    }
+
+		    var collidingColliders = Physics2D.OverlapBoxAll(spawnPosition, _portalPrefabColliderSize, 0f);
+		    foreach (var collider in collidingColliders) {
+			    if (collider.CompareTag(Tags.PORTAL)) {
+				    collidingPortals = true;
+			    }
+		    }
+		    if (collidingPortals) {
 			    continue;
 		    }
 

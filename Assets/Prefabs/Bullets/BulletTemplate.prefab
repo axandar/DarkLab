@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 3545222140199878588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 1077207603960663518}
   m_Father: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683575318703a194cafecf3b5cf08c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 3
+  damageDealt: 4
 --- !u!58 &-4861605877084211589
 CircleCollider2D:
   m_ObjectHideFlags: 0

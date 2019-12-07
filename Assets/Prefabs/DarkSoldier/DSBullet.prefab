@@ -93,4 +93,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ee4429d71636d42bb8b7b4eee8792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLerpTime: 0.6
+  bulletLerpTime: 0.4
