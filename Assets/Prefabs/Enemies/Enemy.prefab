@@ -54,6 +54,8 @@ MonoBehaviour:
   offsetY: 0
   pointsForEnemy: 0
   damageToHP: 0
+  particleSystemPrefab: {fileID: 1875538686527325510, guid: 35169e9af6c01bc4b975900e1998cdbc,
+    type: 3}
 --- !u!50 &-2185672430365522712
 Rigidbody2D:
   serializedVersion: 4
