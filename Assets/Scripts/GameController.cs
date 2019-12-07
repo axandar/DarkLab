@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour {
 		laboratoryDamagedEvent.Invoke();
 	}
 
-	public void EnemyDestroyed(int pointsForEnemy){
+	public void EnemyDestroyed(int pointsForEnemy){`
 		enemyDestroyedEvent.Invoke();
 		_points += pointsForEnemy;
 	}
