@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private int pointsForEnemy;
 	[SerializeField] private int damageToHP;
 	[SerializeField] private GameObject particleSystemPrefab;
+	[SerializeField] private GameObject tinyParticleSystemPrefab;
 	
 	private GameObject _turret;
 	private Transform _transform;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour {
 
 	public void ReceiveDamage(int damageDealt) {
 		health -= damageDealt;
+		Instantiate(tinyParticleSystemPrefab, transform.position, Quaternion.identity);
 		CheckHealth();
 	}
 

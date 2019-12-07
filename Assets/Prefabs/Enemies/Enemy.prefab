@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2185672430365522712}
   - component: {fileID: 637727806811804206}
   - component: {fileID: 5487404052965562081}
+  - component: {fileID: 1325405474442075132}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -55,6 +56,8 @@ MonoBehaviour:
   pointsForEnemy: 0
   damageToHP: 0
   particleSystemPrefab: {fileID: 1875538686527325510, guid: 35169e9af6c01bc4b975900e1998cdbc,
+    type: 3}
+  tinyParticleSystemPrefab: {fileID: 1875538686527325510, guid: 2d2ce1985c6f2a94f9579313bb1976da,
     type: 3}
 --- !u!50 &-2185672430365522712
 Rigidbody2D:
@@ -142,3 +145,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &1325405474442075132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245331649088799258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da78bfca96e2aa41972b473ccdacf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeIntensity: 0.001
