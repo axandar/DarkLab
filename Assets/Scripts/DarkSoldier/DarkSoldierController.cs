@@ -33,7 +33,6 @@ public class DarkSoldierController : MonoBehaviour{
     private void FixedUpdate(){
         if (_movement.magnitude > 0){
             _animator.SetBool("isMoving",true);
-            _renderer.flipY = _movement.x > 0;
             _renderer.flipX = _movement.x > 0;
         }
         else{
