@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MechanicsTest/Feedback/Feedback3.unity
     guid: 11d1ca2d42861364d98923e8d1c944c3
+  - enabled: 1
+    path: Assets/Scenes/FirstScene.unity
+    guid: 21605c51d0a5d534d83f8c8c4327788e
   m_configObjects: {}
