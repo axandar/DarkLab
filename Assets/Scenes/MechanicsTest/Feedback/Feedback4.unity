@@ -241,7 +241,7 @@ Camera:
   far clip plane: 1000
   field of view: 43
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -713,6 +713,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
+      propertyPath: portalSpawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
+      propertyPath: minimalDistanceToTurret
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
 --- !u!1001 &1126179266
@@ -871,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 1146042658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
