@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 577879840037973853}
   - component: {fileID: 577879840037973852}
   - component: {fileID: 1374960335403973414}
+  - component: {fileID: 8373061021824526141}
   m_Layer: 0
   m_Name: DS
-  m_TagString: Untagged
+  m_TagString: DarkSoldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  startingDarkSoldierHealth: 100
 --- !u!50 &577879840037973852
 Rigidbody2D:
   serializedVersion: 4
@@ -129,3 +131,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730b37a8374475047becc8a3755b3a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &8373061021824526141
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577879840037973840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.92, y: 1.68}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.92, y: 1.68}
+  m_EdgeRadius: 0

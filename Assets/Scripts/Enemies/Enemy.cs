@@ -64,9 +64,14 @@ public class Enemy : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if (!other.CompareTag(Tags.LABORATORY)) return;
-		var laboratoryHp = other.GetComponent<LaboratoryHP>();
-		laboratoryHp.DecreaseHp(damageToHP);
-		Destroy(gameObject);
+		if (other.CompareTag(Tags.LABORATORY)){
+			var laboratoryHp = other.GetComponent<LaboratoryHP>();
+			laboratoryHp.DecreaseHp(damageToHP);
+			Destroy(gameObject);
+		}else if(other.CompareTag(Tags.DARK_SOLDIER)){
+			var darkSoldierController = other.GetComponent<DarkSoldierController>();
+			darkSoldierController.DecreaseHp(damageToHP);
+			Destroy(gameObject);
+		}
 	}
 }
