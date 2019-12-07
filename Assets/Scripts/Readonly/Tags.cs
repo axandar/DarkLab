@@ -9,4 +9,5 @@ public class Tags : MonoBehaviour {
 	public static readonly string TURRET = "Turret";
 	public static readonly string ENEMY = "Enemy";
 	public static readonly string LABORATORY = "Laboratory";
+	public static readonly string DARK_SOLDIER = "DarkSoldier";
 }

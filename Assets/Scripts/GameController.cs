@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,7 +6,10 @@ using UnityEngine.Events;
 public class GameController : MonoBehaviour {
 	[SerializeField] private UnityEvent gameEndEvent;
 	[SerializeField] private UnityEvent enemyDestroyedEvent;
-
+	[SerializeField] private UnityEvent darkSoldierDiedEvent;
+	[SerializeField] private GameObject darkSoldierPrefab;
+	[SerializeField] private Transform darkSoldierRespawnPosition;
+	[SerializeField] private float timeForRespawn;
 	private int _points;
 	public void GameEnded() {
 		gameEndEvent.Invoke();
@@ -14,6 +18,17 @@ public class GameController : MonoBehaviour {
 	public void EnemyDestroyed(int pointsForEnemy){
 		enemyDestroyedEvent.Invoke();
 		_points += pointsForEnemy;
-		Debug.Log(_points);
+	}
+
+	public void DarkSoldierDied(){
+		Debug.Log("DarkSoldierDied");
+		darkSoldierDiedEvent.Invoke();
+		StartCoroutine(RiseLikeAPhoenix());
+	}
+
+
+	private IEnumerator RiseLikeAPhoenix(){
+		yield return new WaitForSeconds(timeForRespawn);
+		Instantiate(darkSoldierPrefab, darkSoldierRespawnPosition.position, Quaternion.identity);
 	}
 }
