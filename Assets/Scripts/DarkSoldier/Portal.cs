@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -9,7 +7,12 @@ public class Portal : MonoBehaviour
 
 	private bool _eKeyDown;
 	private bool _channelingStarted;
-	
+	private GameController _gameController;
+
+	private void Start() {
+		_gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
+	}
+
 	private void Update(){
 		if (Input.GetKeyDown(KeyCode.E)){
 			_eKeyDown = true;
@@ -37,6 +40,7 @@ public class Portal : MonoBehaviour
 	private IEnumerator ChannelPortalClosing(){
 		_channelingStarted = true;
 		yield return new WaitForSeconds(channelingTime);
+		_gameController.PortalClosed();
 		Destroy(gameObject);
 	}
 }
