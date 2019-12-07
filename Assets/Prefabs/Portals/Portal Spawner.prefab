@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 5353834131518441735, guid: 04784550e925929439d3b341c7759fb2,
     type: 3}
+  maxAmountOfPortals: 6
   portalSpawnInterval: 3
-  minimalDistanceToTurret: 2.7
-  xSpawnOffset: 8
+  minimalDistanceToTurret: 3.5
+  xSpawnOffset: 8.5
   ySpawnOffset: 4.5
