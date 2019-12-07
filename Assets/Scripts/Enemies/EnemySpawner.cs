@@ -4,7 +4,6 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class EnemySpawner : SerializedMonoBehaviour{
-    [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Dictionary<GameObject, float> enemyPrefabDictionary;
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
@@ -15,9 +14,27 @@ public class EnemySpawner : SerializedMonoBehaviour{
 
     private IEnumerator SpawnEnemy(){
         for (;;){
-            Instantiate(enemyPrefab, gameObject.transform.position, Quaternion.identity, enemyHolderTransform);
+            Instantiate(GetEnemyToSpawn(), gameObject.transform.position, Quaternion.identity, enemyHolderTransform);
             yield return new WaitForSeconds(timeBetweenEnemySpawn);
         }
+    }
+
+    private GameObject GetEnemyToSpawn(){
+        float total = 0;
+        
+        foreach (var item in enemyPrefabDictionary) {
+            total += item.Value;
+        }
+        
+        float randomPoint = Random.value * total;
+        
+        foreach (var item in enemyPrefabDictionary){
+            if (randomPoint <= item.Value) {
+                return item.Key;
+            }
+            randomPoint -= item.Value;
+        }
+        return null;
     }
     
 }
