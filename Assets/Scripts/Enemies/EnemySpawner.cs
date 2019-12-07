@@ -7,6 +7,7 @@ public class EnemySpawner : SerializedMonoBehaviour{
     [SerializeField] private Dictionary<GameObject, float> enemyPrefabDictionary;
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
+    [SerializeField] private float portalRadius;
     
     private void Start(){
         StartCoroutine(SpawnEnemy());
@@ -14,7 +15,8 @@ public class EnemySpawner : SerializedMonoBehaviour{
 
     private IEnumerator SpawnEnemy(){
         for (;;){
-            Instantiate(GetEnemyToSpawn(), gameObject.transform.position, Quaternion.identity, enemyHolderTransform);
+            var spawnPosition = (Vector3) Random.insideUnitCircle * portalRadius + gameObject.transform.position ;
+            Instantiate(GetEnemyToSpawn(),spawnPosition , Quaternion.identity, enemyHolderTransform);
             yield return new WaitForSeconds(timeBetweenEnemySpawn);
         }
     }
@@ -35,6 +37,11 @@ public class EnemySpawner : SerializedMonoBehaviour{
             randomPoint -= item.Value;
         }
         return null;
+    }
+    
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(gameObject.transform.position, portalRadius);
     }
     
 }
