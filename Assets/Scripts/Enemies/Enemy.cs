@@ -53,5 +53,6 @@ public class Enemy : MonoBehaviour{
 		if (!other.CompareTag(Tags.LABORATORY)) return;
 		var laboratoryHp = other.GetComponent<LaboratoryHP>();
 		laboratoryHp.DecreaseHp(damageToHP);
+		Destroy(gameObject);
 	}
 }
