@@ -260,6 +260,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e7d775a0d53984397c442d49e4cc8f, type: 3}
+--- !u!114 &250365129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1468622410416309657, guid: 46e7d775a0d53984397c442d49e4cc8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 250365128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35345ccb959fbf642a7a5a0e0b77d69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667364088
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
         type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
       propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2120580116}
@@ -545,6 +562,36 @@ PrefabInstance:
       propertyPath: darkSoldierRespawnedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2120580116}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 250365129}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: FadeToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626457737802480068, guid: ca373dc5301853141bbb3cf145134539,
+        type: 3}
+      propertyPath: gameEndEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca373dc5301853141bbb3cf145134539, type: 3}
 --- !u!1 &900554549

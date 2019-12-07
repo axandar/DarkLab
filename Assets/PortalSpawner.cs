@@ -70,8 +70,5 @@ public class PortalSpawner : MonoBehaviour {
 	    Gizmos.color = Color.green;
 	    Gizmos.DrawWireSphere(_turretTransform.position, minimalDistanceToTurret);
     }
-
-    private void OnValidate() {
-	    _turretTransform = GameObject.FindGameObjectWithTag(Tags.TURRET).transform;
-    }
+    
 }
