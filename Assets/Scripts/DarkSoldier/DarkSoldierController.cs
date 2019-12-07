@@ -1,9 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class DarkSoldierController : MonoBehaviour{
     [SerializeField] private float moveSpeed;
     [SerializeField] private int startingDarkSoldierHealth;
+    [SerializeField] private Image darkSoldierHealthBar;
+    [SerializeField] private Canvas darkSoldierHealtCanvas;
+    [SerializeField] private float healthBarYOffset;
     private GameController _gameController;
     private int _darkSoldierHealth;
     
@@ -19,6 +22,7 @@ public class DarkSoldierController : MonoBehaviour{
     private void Update(){
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
+        darkSoldierHealtCanvas.transform.position = new Vector2(transform.position.x, transform.position.y + healthBarYOffset);
         
     }
 
@@ -28,11 +32,11 @@ public class DarkSoldierController : MonoBehaviour{
 
     public void DecreaseHp(int byAmount){
         _darkSoldierHealth -= byAmount;
+        darkSoldierHealthBar.fillAmount = (float)_darkSoldierHealth / startingDarkSoldierHealth;
         if (_darkSoldierHealth <= 0){
             _gameController.DarkSoldierDied();
             Destroy(gameObject);
         }
     }
-
-    
+   
 }
