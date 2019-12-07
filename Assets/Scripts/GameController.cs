@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 	[SerializeField] private UnityEvent portalOpenedEvent;
 	[SerializeField] private UnityEvent portalClosedEvent;
 	[SerializeField] private UnityEvent darkSoldierDamagedEvent;
+	[SerializeField] private UnityEvent darkSoldierRespawnedEvent;
 	[SerializeField] private GameObject darkSoldierPrefab;
 	[SerializeField] private Transform darkSoldierRespawnPosition;
 	[SerializeField] private float timeForRespawn;
@@ -33,7 +34,7 @@ public class GameController : MonoBehaviour {
 		laboratoryDamagedEvent.Invoke();
 	}
 
-	public void EnemyDestroyed(int pointsForEnemy){`
+	public void EnemyDestroyed(int pointsForEnemy){
 		enemyDestroyedEvent.Invoke();
 		_points += pointsForEnemy;
 	}
@@ -58,6 +59,7 @@ public class GameController : MonoBehaviour {
 
 	private IEnumerator RiseLikeAPhoenix(){
 		yield return new WaitForSeconds(timeForRespawn);
+		darkSoldierRespawnedEvent.Invoke();
 		Instantiate(darkSoldierPrefab, darkSoldierRespawnPosition.position, Quaternion.identity);
 	}
 }

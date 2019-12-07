@@ -16,42 +16,42 @@ public class AudioManager : MonoBehaviour {
 		enemyDied;
 
 	public void TurretShootSound() {
-		turretShoot.Play();
+		turretShoot.PlayOneShot(turretShoot.clip);
 	}
 
 	public void DsShootSound() {
-		DsShoot.Play();
+		DsShoot.PlayOneShot(DsShoot.clip);
 	}
 
 	public void PortalOpenSound() {
-		portalOpen.Play();
+		portalOpen.PlayOneShot(portalOpen.clip);
 	}
 
 	public void PortalCloseSound() {
-		portalClose.Play();
+		portalClose.PlayOneShot(portalClose.clip);
 	}
 
 	public void DsDamageSound() {
-		DsDamage.Play();
+		DsDamage.PlayOneShot(DsDamage.clip);
 	}
 
 	public void DsDiedSound() {
-		DsDie.Play();
+		DsDie.PlayOneShot(DsDie.clip);
 	}
 
 	public void DsRespawnedSound() {
-		DsRespawn.Play();
+		DsRespawn.PlayOneShot(DsRespawn.clip);
 	}
 
 	public void LabDamagedSound() {
-		labDamage.Play();
+		labDamage.PlayOneShot(labDamage.clip);
 	}
 
 	public void GameOverSound() {
-		gameOver.Play();
+		gameOver.PlayOneShot(gameOver.clip);
 	}
 
 	public void EnemyDiedSound() {
-		enemyDied.Play();
+		enemyDied.PlayOneShot(enemyDied.clip);
 	}
 }
