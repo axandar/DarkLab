@@ -32,6 +32,11 @@ PrefabInstance:
       propertyPath: offsetY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1062373841582150527, guid: 11cf3f3fbb725524ba59b3d3351471da,
+        type: 3}
+      propertyPath: damageToHP
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7245331649088799258, guid: 11cf3f3fbb725524ba59b3d3351471da,
         type: 3}
       propertyPath: m_Name
