@@ -19,7 +19,6 @@ public class DarkSoldierController : MonoBehaviour{
     private void Update(){
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
-        
     }
 
     private void FixedUpdate(){
@@ -31,6 +30,8 @@ public class DarkSoldierController : MonoBehaviour{
         if (_darkSoldierHealth <= 0){
             _gameController.DarkSoldierDied();
             Destroy(gameObject);
+        } else {
+            _gameController.DarkSoldierDamaged();
         }
     }
 

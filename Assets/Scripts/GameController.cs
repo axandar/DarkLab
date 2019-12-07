@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 	[SerializeField] private UnityEvent darkSoldierDiedEvent;
 	[SerializeField] private UnityEvent portalOpenedEvent;
 	[SerializeField] private UnityEvent portalClosedEvent;
+	[SerializeField] private UnityEvent darkSoldierDamagedEvent;
 	[SerializeField] private GameObject darkSoldierPrefab;
 	[SerializeField] private Transform darkSoldierRespawnPosition;
 	[SerializeField] private float timeForRespawn;
@@ -39,6 +40,10 @@ public class GameController : MonoBehaviour {
 
 	public void PortalOpened() {
 		portalOpenedEvent.Invoke();
+	}
+
+	public void DarkSoldierDamaged() {
+		darkSoldierDamagedEvent.Invoke();
 	}
 
 	public void PortalClosed() {
