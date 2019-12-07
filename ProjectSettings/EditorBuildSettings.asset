@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FirstScene.unity
+    guid: 21605c51d0a5d534d83f8c8c4327788e
+  - enabled: 1
+    path: Assets/Scenes/MechanicsTest/Feedback/Feedback4.unity
+    guid: 897b29faf78707644aa771e500eef3d6
+  - enabled: 1
+    path: Assets/Scenes/LosingScene.unity
+    guid: b17c8f2da91839f4caeb59c482f2e0f4
+  m_configObjects: {}
