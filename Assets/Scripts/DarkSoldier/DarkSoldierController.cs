@@ -36,6 +36,8 @@ public class DarkSoldierController : MonoBehaviour{
         if (_darkSoldierHealth <= 0){
             _gameController.DarkSoldierDied();
             Destroy(gameObject);
+        } else {
+            _gameController.DarkSoldierDamaged();
         }
     }
    
