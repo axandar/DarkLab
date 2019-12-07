@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour{
+public class Enemy : MonoBehaviour {
+	[SerializeField] private int health;
 	[SerializeField] private float speed;
 	[SerializeField] private float minTimeForNextShake;
 	[SerializeField] private float maxTimeForNextShake;
 	[SerializeField] private float offsetX;
 	[SerializeField] private float offsetY;
 	[SerializeField] private int pointsForEnemy;
-
 	[SerializeField] private int damageToHP;
 	
 	private GameObject _turret;
@@ -20,6 +20,17 @@ public class Enemy : MonoBehaviour{
 	private Vector3 _vectorToSecondaryTarget;
 	private GameController _gameController;
 
+	public void ReceiveDamage(int damageDealt) {
+		health -= damageDealt;
+		CheckHealth();
+	}
+
+	private void CheckHealth() {
+		if (health > 0) return;
+		_gameController.EnemyDestroyed(pointsForEnemy);
+		Destroy(gameObject);
+	}
+	
 	private void Start(){
 		_gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
 		_turret = GameObject.FindGameObjectWithTag(Tags.TURRET);
@@ -52,14 +63,10 @@ public class Enemy : MonoBehaviour{
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D other){
+	private void OnTriggerEnter2D(Collider2D other) {
 		if (!other.CompareTag(Tags.LABORATORY)) return;
 		var laboratoryHp = other.GetComponent<LaboratoryHP>();
 		laboratoryHp.DecreaseHp(damageToHP);
 		Destroy(gameObject);
-	}
-
-	private void OnDestroy(){
-		_gameController.EnemyDestroyed(pointsForEnemy);
 	}
 }
