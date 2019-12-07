@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour{
 	[SerializeField] private float maxTimeForNextShake;
 	[SerializeField] private float offsetX;
 	[SerializeField] private float offsetY;
+
+	[SerializeField] private int damageToHP;
 	
 	private GameObject _turret;
 	private Transform _transform;
@@ -46,6 +48,10 @@ public class Enemy : MonoBehaviour{
 			yield return new WaitForSeconds(timeToWait);
 		}
 	}
-	
-	
+
+	private void OnTriggerEnter2D(Collider2D other){
+		if (!other.CompareTag(Tags.LABORATORY)) return;
+		var laboratoryHp = other.GetComponent<LaboratoryHP>();
+		laboratoryHp.DecreaseHp(damageToHP);
+	}
 }
