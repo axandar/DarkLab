@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour {
 	[SerializeField] private UnityEvent darkSoldierDiedEvent;
 	[SerializeField] private UnityEvent portalOpenedEvent;
 	[SerializeField] private UnityEvent portalClosedEvent;
+	[SerializeField] private UnityEvent darkSoldierDamagedEvent;
+	[SerializeField] private UnityEvent darkSoldierRespawnedEvent;
 	[SerializeField] private GameObject darkSoldierPrefab;
 	[SerializeField] private Transform darkSoldierRespawnPosition;
 	[SerializeField] private float timeForRespawn;
@@ -41,6 +43,10 @@ public class GameController : MonoBehaviour {
 		portalOpenedEvent.Invoke();
 	}
 
+	public void DarkSoldierDamaged() {
+		darkSoldierDamagedEvent.Invoke();
+	}
+
 	public void PortalClosed() {
 		portalClosedEvent.Invoke();
 	}
@@ -53,6 +59,7 @@ public class GameController : MonoBehaviour {
 
 	private IEnumerator RiseLikeAPhoenix(){
 		yield return new WaitForSeconds(timeForRespawn);
+		darkSoldierRespawnedEvent.Invoke();
 		Instantiate(darkSoldierPrefab, darkSoldierRespawnPosition.position, Quaternion.identity);
 	}
 }
