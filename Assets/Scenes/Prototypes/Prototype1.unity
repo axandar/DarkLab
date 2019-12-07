@@ -564,7 +564,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e8751670881ea57438374fd869460260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -657,6 +657,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1743690473, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
+      propertyPath: shootInterval
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
 --- !u!1001 &1355679554
@@ -666,16 +670,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3400982306096719063, guid: 16edecfe2ef13b14abdd54e575b7af67,
-        type: 3}
-      propertyPath: m_Name
-      value: Laboratory
-      objectReference: {fileID: 0}
     - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
       propertyPath: hpDisplayText
       value: 
       objectReference: {fileID: 1602147207}
+    - target: {fileID: 3400982306096719063, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: m_Name
+      value: Laboratory
+      objectReference: {fileID: 0}
     - target: {fileID: 2792141934431655067, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
       propertyPath: m_LocalPosition.x
