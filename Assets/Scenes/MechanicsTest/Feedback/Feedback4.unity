@@ -241,7 +241,7 @@ Camera:
   far clip plane: 1000
   field of view: 43
   orthographic: 1
-  orthographic size: 5.4
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -344,31 +344,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!1 &741471270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 577879840037973840, guid: 3ea66683555bba849a898fb49fd591a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1473634493}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &741471271
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741471270}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d343e0fc68bf21441a5ee5213d085e93, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &894572631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,7 +561,7 @@ GameObject:
   - component: {fileID: 1093814918}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: DSCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,15 +714,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
+      propertyPath: portalSpawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
       propertyPath: minimalDistanceToTurret
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
-      propertyPath: xSpawnOffset
-      value: 8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205304623, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
-      propertyPath: maxAmountOfPortals
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -908,7 +879,7 @@ Transform:
   m_GameObject: {fileID: 1146042658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -926,7 +897,7 @@ GameObject:
   - component: {fileID: 1210327665}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: DSImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1053,14 +1024,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1743690473, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
-      propertyPath: shootInterval
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743690473, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
-      propertyPath: bulletSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
 --- !u!114 &1326976942 stripped
@@ -1082,25 +1045,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8157808424638362369, guid: 16edecfe2ef13b14abdd54e575b7af67,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.05
-      objectReference: {fileID: 0}
-    - target: {fileID: -8157808424638362369, guid: 16edecfe2ef13b14abdd54e575b7af67,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3400982306096719063, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
       propertyPath: m_Name
       value: Laboratory
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
-        type: 3}
-      propertyPath: hpDisplayText
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
@@ -1109,9 +1057,30 @@ PrefabInstance:
       objectReference: {fileID: 1326976942}
     - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
-      propertyPath: maxHp
-      value: 10
+      propertyPath: channelingTime
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: maxHp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: repairAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: repairBaseParticles
+      value: 
+      objectReference: {fileID: 3363715419380983980, guid: 95e6780921db93d4294146ae3d30f4ce,
+        type: 3}
     - target: {fileID: 2792141934431655067, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1236,12 +1205,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 577879840037973855, guid: 3ea66683555bba849a898fb49fd591a7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a91f0267b4e02ed41964312356f1c30a,
-        type: 3}
     - target: {fileID: 577879840037973853, guid: 3ea66683555bba849a898fb49fd591a7,
         type: 3}
       propertyPath: darkSoldierHealthBar
@@ -1252,11 +1215,6 @@ PrefabInstance:
       propertyPath: darkSoldierHealtCanvas
       value: 
       objectReference: {fileID: 1093814920}
-    - target: {fileID: 577879840037973853, guid: 3ea66683555bba849a898fb49fd591a7,
-        type: 3}
-      propertyPath: healthBarYOffset
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ea66683555bba849a898fb49fd591a7, type: 3}
 --- !u!114 &1926688336 stripped
