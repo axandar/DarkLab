@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8505564886020766348}
   - component: {fileID: 1998598126887340856}
+  - component: {fileID: 1854021631358928573}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: PortalSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -77,9 +78,28 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1854021631358928573
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986871370454754770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 199a575c9f626e54880104eaafdc2b66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5353834131518441735
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc54d1fa7c18a144bb47c8ff6ccc465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  channelingTime: 3
+  channelingTime: 2
+  closingPortalParticles: {fileID: 3363715419380983980, guid: b49b95c066c032145b6964ff4d4282cb,
+    type: 3}
 --- !u!1001 &5403100442351198219
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
 	[SerializeField] private float channelingTime;
+	[SerializeField] private GameObject closingPortalParticles;
 
 	private bool _eKeyDown;
 	private bool _channelingStarted;
@@ -39,6 +40,7 @@ public class Portal : MonoBehaviour
 
 	private IEnumerator ChannelPortalClosing(){
 		_channelingStarted = true;
+		Instantiate(closingPortalParticles, transform.position, Quaternion.identity);
 		yield return new WaitForSeconds(channelingTime);
 		_gameController.PortalClosed();
 		Destroy(gameObject);

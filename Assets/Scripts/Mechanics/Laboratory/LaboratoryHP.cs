@@ -1,29 +1,32 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LaboratoryHP : MonoBehaviour {
 	[SerializeField] private int hp;
-	[SerializeField] private TextMeshProUGUI hpDisplayText;
+	[SerializeField] private int maxHp;
+	[SerializeField] private Image healthBar;
 	
 	private GameController _gameController;
 
 	private void Start() {
 		_gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
-		UpdateHpAmountDisplay(hp);
+		UpdateHpAmountDisplay();
 	}
 
 	public void DecreaseHp(int byAmount) {
 		_gameController.LaboratoryDamaged();
 		hp -= byAmount;
 		if (hp <= 0) {
-			UpdateHpAmountDisplay(0);
+			UpdateHpAmountDisplay();
 			_gameController.GameEnded();
 		} else {
-			UpdateHpAmountDisplay(hp);
+			UpdateHpAmountDisplay();
 		}
 	}
 
-	private void UpdateHpAmountDisplay(int hpAmount) {
-		hpDisplayText.text = "Health: " + hpAmount;
+	private void UpdateHpAmountDisplay() {
+		healthBar.fillAmount = (float)hp / maxHp;
+		
 	}
 }
