@@ -12,6 +12,12 @@ public class DarkSoldierShooting : MonoBehaviour {
     private bool _attackCoroutineRunning;
     private Enemy _currentTarget;
 
+    private GameController _gameController;
+
+    private void Start() {
+        _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
+    }
+
     private void FixedUpdate() {
         var enemiesList = ScanForEnemies();
         if (enemiesList.Count == 0) { 
@@ -61,5 +67,6 @@ public class DarkSoldierShooting : MonoBehaviour {
         var bulletScript = Instantiate(bulletPrefab, transform.position, Quaternion.identity).GetComponent<DarkSoldierBullet>();
         bulletScript.BulletDamage = shootingDamage;
         bulletScript.TargetEnemy = _currentTarget;
+        _gameController.DarkSoldierShot();
     }
 }
