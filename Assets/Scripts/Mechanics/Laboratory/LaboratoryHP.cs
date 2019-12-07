@@ -13,6 +13,7 @@ public class LaboratoryHP : MonoBehaviour {
 	}
 
 	public void DecreaseHp(int byAmount) {
+		_gameController.LaboratoryDamaged();
 		hp -= byAmount;
 		if (hp <= 0) {
 			UpdateHpAmountDisplay(0);

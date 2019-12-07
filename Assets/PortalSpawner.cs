@@ -7,10 +7,13 @@ using Random = UnityEngine.Random;
 
 public class PortalSpawner : MonoBehaviour {
 	[SerializeField] private GameObject portalPrefab;
+	[SerializeField] private int maxAmountOfPortals;
 	[SerializeField] private float portalSpawnInterval;
 	[SerializeField] private float minimalDistanceToTurret;
 	[SerializeField] private float xSpawnOffset;
     [SerializeField] private float ySpawnOffset;
+
+    private int _amountOfPortals;
 
     private Transform _turretTransform;
 
@@ -19,14 +22,21 @@ public class PortalSpawner : MonoBehaviour {
 	    StartCoroutine(SpawnPortalsCoroutine());
     }
 
+    public void OnPortalDestroyed() {
+	    _amountOfPortals--;
+    }
+    
     private IEnumerator SpawnPortalsCoroutine() {
 	    for (;;) {
-		    SpawnPortal();
+		    if (_amountOfPortals < maxAmountOfPortals) {
+			    SpawnPortal();
+		    }
 		    yield return new WaitForSeconds(portalSpawnInterval);
 	    }
     }
 
     private void SpawnPortal() {
+	    _amountOfPortals++;
 	    for (;;) {
 		    var spawnerPosition = transform.position;
 		    var xOffset = Random.Range(-xSpawnOffset, xSpawnOffset);

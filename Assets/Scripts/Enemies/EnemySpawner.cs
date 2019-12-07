@@ -8,9 +8,16 @@ public class EnemySpawner : SerializedMonoBehaviour{
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
     [SerializeField] private float portalRadius;
-    
-    private void Start(){
+
+    private GameController _gameController;
+    private void Start() {
+        _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
         StartCoroutine(SpawnEnemy());
+    }
+
+    private void DestroySpawner() {
+        //TODO: invoke when spawner is destroyed;
+        _gameController.PortalClosed();
     }
 
     private IEnumerator SpawnEnemy(){

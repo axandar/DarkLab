@@ -4,8 +4,10 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour {
 	[SerializeField] private UnityEvent gameEndEvent;
+	[SerializeField] private UnityEvent laboratoryDamagedEvent;
 	[SerializeField] private UnityEvent enemyDestroyedEvent;
 	[SerializeField] private UnityEvent darkSoldierDiedEvent;
+	[SerializeField] private UnityEvent portalClosedEvent;
 	[SerializeField] private GameObject darkSoldierPrefab;
 	[SerializeField] private Transform darkSoldierRespawnPosition;
 	[SerializeField] private float timeForRespawn;
@@ -14,9 +16,17 @@ public class GameController : MonoBehaviour {
 		gameEndEvent.Invoke();
 	}
 
+	public void LaboratoryDamaged() {
+		laboratoryDamagedEvent.Invoke();
+	}
+
 	public void EnemyDestroyed(int pointsForEnemy){
 		enemyDestroyedEvent.Invoke();
 		_points += pointsForEnemy;
+	}
+
+	public void PortalClosed() {
+		portalClosedEvent.Invoke();
 	}
 
 	public void DarkSoldierDied(){
@@ -24,7 +34,6 @@ public class GameController : MonoBehaviour {
 		darkSoldierDiedEvent.Invoke();
 		StartCoroutine(RiseLikeAPhoenix());
 	}
-
 
 	private IEnumerator RiseLikeAPhoenix(){
 		yield return new WaitForSeconds(timeForRespawn);
