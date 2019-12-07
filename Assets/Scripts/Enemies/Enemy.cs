@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour{
 	[SerializeField] private float maxTimeForNextShake;
 	[SerializeField] private float offsetX;
 	[SerializeField] private float offsetY;
+	[SerializeField] private int pointsForEnemy;
 
 	[SerializeField] private int damageToHP;
 	
@@ -17,8 +18,10 @@ public class Enemy : MonoBehaviour{
 	private Transform _transform;
 	private Vector3 _toTurretVector;
 	private Vector3 _vectorToSecondaryTarget;
-	
+	private GameController _gameController;
+
 	private void Start(){
+		_gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
 		_turret = GameObject.FindGameObjectWithTag(Tags.TURRET);
 		_transform = transform;
 		StartCoroutine(GetRandomSecondaryTarget());
@@ -54,5 +57,9 @@ public class Enemy : MonoBehaviour{
 		var laboratoryHp = other.GetComponent<LaboratoryHP>();
 		laboratoryHp.DecreaseHp(damageToHP);
 		Destroy(gameObject);
+	}
+
+	private void OnDestroy(){
+		_gameController.EnemyDestroyed(pointsForEnemy);
 	}
 }
