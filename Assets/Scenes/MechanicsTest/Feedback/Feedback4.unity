@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1093814918}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: DSCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 1210327665}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: DSImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1047,6 +1047,32 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1326976942}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: channelingTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: maxHp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: repairAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737324222200392954, guid: 16edecfe2ef13b14abdd54e575b7af67,
+        type: 3}
+      propertyPath: repairBaseParticles
+      value: 
+      objectReference: {fileID: 3363715419380983980, guid: 95e6780921db93d4294146ae3d30f4ce,
+        type: 3}
     - target: {fileID: 2792141934431655067, guid: 16edecfe2ef13b14abdd54e575b7af67,
         type: 3}
       propertyPath: m_LocalPosition.x
