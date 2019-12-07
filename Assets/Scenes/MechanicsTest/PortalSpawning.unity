@@ -272,30 +272,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f0ddb8a9345394f9275d247b100862, type: 3}
---- !u!1 &1205304622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6570840813423310310, guid: 92f0ddb8a9345394f9275d247b100862,
-    type: 3}
-  m_PrefabInstance: {fileID: 1205304621}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1205304623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205304622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 531f47ce523bfe54495a667693635f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portalPrefab: {fileID: 5353834131518441735, guid: 04784550e925929439d3b341c7759fb2,
-    type: 3}
-  portalSpawnInterval: 3
-  minimalDistanceToTurret: 2.7
-  xSpawnOffset: 8
-  ySpawnOffset: 4.5
 --- !u!1001 &1430393945
 PrefabInstance:
   m_ObjectHideFlags: 0
