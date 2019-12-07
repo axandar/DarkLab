@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] private float offsetY;
 	[SerializeField] private int pointsForEnemy;
 	[SerializeField] private int damageToHP;
+	[SerializeField] private GameObject particleSystemPrefab;
 	
 	private GameObject _turret;
 	private Transform _transform;
@@ -73,5 +74,12 @@ public class Enemy : MonoBehaviour {
 			darkSoldierController.DecreaseHp(damageToHP);
 			Destroy(gameObject);
 		}
+	}
+
+	private void OnDestroy(){
+		if (Application.IsPlaying(gameObject)){
+			Instantiate(particleSystemPrefab, transform.position, Quaternion.identity);
+		}
+
 	}
 }
