@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class GameController : MonoBehaviour {
-	[SerializeField] private UnityEvent GameEndEvent;
-	[SerializeField] private UnityEvent EnemyDestroyedEvent;
+	[SerializeField] private UnityEvent gameEndEvent;
+	[SerializeField] private UnityEvent enemyDestroyedEvent;
 
 	private int _points;
 	public void GameEnded() {
-		GameEndEvent.Invoke();
+		gameEndEvent.Invoke();
 	}
 
 	public void EnemyDestroyed(int pointsForEnemy){
-		EnemyDestroyedEvent.Invoke();
+		enemyDestroyedEvent.Invoke();
 		_points += pointsForEnemy;
 		Debug.Log(_points);
 	}
