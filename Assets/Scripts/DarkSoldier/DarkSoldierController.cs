@@ -9,11 +9,15 @@ public class DarkSoldierController : MonoBehaviour{
     [SerializeField] private float healthBarYOffset;
     private GameController _gameController;
     private int _darkSoldierHealth;
+    private Animator _animator;
+    private SpriteRenderer _renderer;
     
 
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private void Start(){
+        _animator = GetComponent<Animator>();
+        _renderer = GetComponent<SpriteRenderer>();
         _darkSoldierHealth = startingDarkSoldierHealth;
         _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
@@ -27,6 +31,14 @@ public class DarkSoldierController : MonoBehaviour{
     }
 
     private void FixedUpdate(){
+        if (_movement.magnitude > 0){
+            _animator.SetBool("isMoving",true);
+            _renderer.flipY = _movement.x > 0;
+            _renderer.flipX = _movement.x > 0;
+        }
+        else{
+            _animator.SetBool("isMoving",false);
+        }
         _rb.MovePosition(_rb.position + Time.fixedDeltaTime * moveSpeed * _movement);
     }
 
