@@ -14,9 +14,7 @@ public class Portal : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E)){
 			_eKeyDown = true;
 		}
-
 		if (!Input.GetKeyUp(KeyCode.E)) return;
-		Debug.Log("E key up!!!");
 		_eKeyDown = false;
 		_channelingStarted = false;
 		StopAllCoroutines();
@@ -24,7 +22,6 @@ public class Portal : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D other){
 		if (!other.CompareTag(Tags.DARK_SOLDIER)) return;
-		Debug.Log("PortalTouched");
 		if (!_eKeyDown) return;
 		if (!_channelingStarted){
 			StartCoroutine(ChannelPortalClosing());
@@ -33,14 +30,12 @@ public class Portal : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other){
 		if (!other.CompareTag(Tags.DARK_SOLDIER)) return;
-		Debug.Log("TriggerExited");
 		_channelingStarted = false;
 		StopAllCoroutines();
 	}
 
 	private IEnumerator ChannelPortalClosing(){
 		_channelingStarted = true;
-		Debug.Log("CoroutineStarted");
 		yield return new WaitForSeconds(channelingTime);
 		Destroy(gameObject);
 	}
