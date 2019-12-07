@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3075df4aaaa949d42a576be4e7d5de88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  startingDarkSoldierHealth: 12
+  moveSpeed: 4
+  startingDarkSoldierHealth: 20
 --- !u!50 &577879840037973852
 Rigidbody2D:
   serializedVersion: 4
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingRange: 4
   shootingDamage: 1
-  shootingInterval: 0.3
+  shootingInterval: 0.2
   bulletPrefab: {fileID: 3511684296250941073, guid: 7b6df0d3355c82d48aab4537ed206a6c,
     type: 3}
 --- !u!61 &8373061021824526141

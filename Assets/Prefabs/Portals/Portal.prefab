@@ -152,7 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc54d1fa7c18a144bb47c8ff6ccc465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  channelingTime: 3
+  channelingTime: 2
+  closingPortalParticles: {fileID: 3363715419380983980, guid: b49b95c066c032145b6964ff4d4282cb,
+    type: 3}
 --- !u!1001 &5403100442351198219
 PrefabInstance:
   m_ObjectHideFlags: 0
