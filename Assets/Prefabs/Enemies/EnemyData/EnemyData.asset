@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb929ee0969bf84e8cc5ea80ff0618b, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  speed: 0
-  minTimeForNextShake: 0
-  maxTimeForNextShake: 0
-  targetSearchOffsetX: 0
-  targetSearchOffsetY: 0
-  pointsForEnemy: 0
-  dealtDamage: 0
-  particleSystemPrefab: {fileID: 0}
-  tinyParticleSystemPrefab: {fileID: 0}
+  maxHealth: 6
+  speed: 0.4
+  minTimeForNextShake: 1
+  maxTimeForNextShake: 3
+  targetSearchOffsetX: 3
+  targetSearchOffsetY: 3
+  pointsForEnemy: 30
+  dealtDamage: 5
+  particleSystemPrefab: {fileID: 1875538686527325510, guid: 35169e9af6c01bc4b975900e1998cdbc,
+    type: 3}
+  tinyParticleSystemPrefab: {fileID: 1875538686527325510, guid: 2d2ce1985c6f2a94f9579313bb1976da,
+    type: 3}

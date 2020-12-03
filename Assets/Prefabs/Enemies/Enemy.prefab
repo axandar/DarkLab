@@ -47,18 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828fd95a1ed0e14390de62ae9db471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9
-  speed: 0
-  minTimeForNextShake: 0
-  maxTimeForNextShake: 0
-  offsetX: 0
-  offsetY: 0
-  pointsForEnemy: 0
-  damageToHP: 0
-  particleSystemPrefab: {fileID: 1875538686527325510, guid: 35169e9af6c01bc4b975900e1998cdbc,
-    type: 3}
-  tinyParticleSystemPrefab: {fileID: 1875538686527325510, guid: 2d2ce1985c6f2a94f9579313bb1976da,
-    type: 3}
+  enemyData: {fileID: 11400000, guid: 0f7c39582c10a3f4a875378a6394b060, type: 2}
 --- !u!50 &-2185672430365522712
 Rigidbody2D:
   serializedVersion: 4
@@ -94,6 +83,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
