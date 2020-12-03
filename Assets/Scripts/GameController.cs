@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour {
 	[SerializeField] private GameObject darkSoldierPrefab;
 	[SerializeField] private Transform darkSoldierRespawnPosition;
 	[SerializeField] private float timeForRespawn;
-	private int _points;
 	
 	public void GameEnded() {
 		gameEndEvent.Invoke();
@@ -36,7 +35,6 @@ public class GameController : MonoBehaviour {
 
 	public void EnemyDestroyed(int pointsForEnemy){
 		enemyDestroyedEvent.Invoke();
-		_points += pointsForEnemy;
 	}
 
 	public void PortalOpened() {
@@ -52,7 +50,6 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void DarkSoldierDied(){
-		Debug.Log("DarkSoldierDied");
 		darkSoldierDiedEvent.Invoke();
 		StartCoroutine(RiseLikeAPhoenix());
 	}
