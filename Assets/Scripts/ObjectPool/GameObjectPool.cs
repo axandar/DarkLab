@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace ObjectPool {
 	public class GameObjectPool<T> where T: MonoBehaviour {
@@ -9,14 +11,18 @@ namespace ObjectPool {
 		private List<T> _pooledObjects;
 
 		private Action<T> _onPooled;
-		private Action<T> _onReturned; 
+		private Action<T> _onReturned;
+		private Action<T> _onInstantiated;
 		
 		private readonly int _persistentObjectsAmount;
 		private GameObject _objectPrefab;
 		
-		public GameObjectPool(int persistentObjectsAmount, GameObject objectPrefab, Action<T> onPooled, Action<T> onReturned) {
+		public GameObjectPool(int persistentObjectsAmount, GameObject objectPrefab, Action<T> onInstantiated, Action<T> onPooled, Action<T> onReturned) {
 			_persistentObjectsAmount = persistentObjectsAmount;
 			_objectPrefab = objectPrefab;
+			if (onInstantiated != null) {
+				_onInstantiated = onInstantiated;
+			}
 			if (onPooled != null) {
 				_onPooled = onPooled;
 			}
@@ -50,6 +56,7 @@ namespace ObjectPool {
 			} else {
 				returnedObj = GameObject.Instantiate(_objectPrefab, Vector3.zero, Quaternion.identity)
 					.GetComponent<T>();
+				_onInstantiated?.Invoke(returnedObj);
 			}
 			return returnedObj;
 		}

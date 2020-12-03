@@ -1089,6 +1089,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1743690473, guid: 71a70e979a299e54bb4e6802737a9ac1, type: 3}
+      propertyPath: shootInterval
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 3170692066770280659, guid: 71a70e979a299e54bb4e6802737a9ac1,
         type: 3}
       propertyPath: m_LocalPosition.x

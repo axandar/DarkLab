@@ -45,6 +45,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -90,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5975847326929912602}
   - component: {fileID: -3229023688251529330}
-  - component: {fileID: 5389953601836829594}
   - component: {fileID: 2754355684434276163}
   - component: {fileID: -4861605877084211589}
   m_Layer: 0
@@ -136,19 +136,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5389953601836829594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3545222140199878588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453946dbe795de54297dfc121d310077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDestroyTime: 3.5
 --- !u!114 &2754355684434276163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealt: 4
+  maxTurretDistance: 20
 --- !u!58 &-4861605877084211589
 CircleCollider2D:
   m_ObjectHideFlags: 0

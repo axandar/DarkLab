@@ -82,6 +82,5 @@ public class Enemy : MonoBehaviour {
 		if (Application.IsPlaying(gameObject)){
 			Instantiate(particleSystemPrefab, transform.position, Quaternion.identity);
 		}
-
 	}
 }

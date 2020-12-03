@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using ObjectPool;
 using UnityEngine;
 
 public class TurretShoot : MonoBehaviour {
@@ -12,9 +13,23 @@ public class TurretShoot : MonoBehaviour {
     private bool _shootBulletsCoroutineStarted;
 
     private GameController _gameController;
+    private GameObjectPool<BulletLogic> _bulletPool;
 
     private void Start() {
+        InitializeFields();
+    }
+
+    private void InitializeFields() {
         _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
+        _bulletPool = new GameObjectPool<BulletLogic>(10, bulletPrefab, BulletInstantiated, null, null);
+    }
+    
+    private void BulletInstantiated(BulletLogic bulletLogic) {
+        bulletLogic.SetupBullet(transform, ReturnBulletToPool);
+    }
+
+    private void ReturnBulletToPool(BulletLogic bulletLogic) {
+        _bulletPool.ReturnObject(bulletLogic);
     }
 
     private void Update() {
@@ -46,15 +61,18 @@ public class TurretShoot : MonoBehaviour {
     private IEnumerator ShootBulletsCoroutine() {
         _shootBulletsCoroutineStarted = true;
         for (;;) {
-            InstantiateBullet();
+            ShootBullet();
             yield return new WaitForSeconds(shootInterval);
         }
     }
-
-    private void InstantiateBullet() {
-        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+    
+    private void ShootBullet() {
+        var bullet = _bulletPool.GetObject();
+        bullet.ClearVelocity();
+        
+        bullet.transform.position = bulletSpawnPoint.transform.position;
         var shootVector = transform.right;
-        bullet.GetComponent<Rigidbody2D>().AddForce(bulletSpeed * shootVector,ForceMode2D.Impulse);
+        bullet.Rigidbody2D.AddForce(bulletSpeed * shootVector,ForceMode2D.Impulse);
         _gameController.TurretShotABullet();
     }
 }
