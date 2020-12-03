@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using TMPro;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,17 +52,15 @@ public class LaboratoryHP : MonoBehaviour {
 
 	private void UpdateHpAmountDisplay() {
 		healthBar.fillAmount = (float)hp / maxHp;
-		
 	}
 
-	private void OnTriggerStay2D(Collider2D other){
-		if (!other.CompareTag(Tags.DARK_SOLDIER)) return;
-		if (!_eKeyDown) return;
+	private void OnTriggerStay2D(Collider2D other) {
+		if (!other.CompareTag(Tags.DARK_SOLDIER)) {return;}
+		if (!_eKeyDown) {return;}
 		if (!_channelingStarted){
 			StartCoroutine(ChannelPortalClosing());
 		}
 	}
-	
 	
 	private void OnTriggerExit2D(Collider2D other){
 		if (!other.CompareTag(Tags.DARK_SOLDIER)) return;

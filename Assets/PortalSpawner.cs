@@ -17,10 +17,14 @@ public class PortalSpawner : MonoBehaviour {
     private GameController _gameController;
 
     private void Start() {
+	    InitializeFields();
+	    StartCoroutine(SpawnPortalsCoroutine());
+    }
+
+    private void InitializeFields() {
 	    _turretTransform = GameObject.FindGameObjectWithTag(Tags.TURRET).transform;
 	    _portalPrefabColliderSize = portalPrefab.GetComponent<BoxCollider2D>().size;
 	    _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
-	    StartCoroutine(SpawnPortalsCoroutine());
     }
 
     public void OnPortalDestroyed() {
@@ -68,6 +72,9 @@ public class PortalSpawner : MonoBehaviour {
 	    Gizmos.color = Color.red;
 	    Gizmos.DrawWireCube(transform.position, new Vector3(xSpawnOffset * 2, ySpawnOffset * 2));
 	    Gizmos.color = Color.green;
+	    if (_turretTransform == null) {
+		    return;
+	    }
 	    Gizmos.DrawWireSphere(_turretTransform.position, minimalDistanceToTurret);
     }
     

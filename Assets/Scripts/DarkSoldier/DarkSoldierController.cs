@@ -12,10 +12,14 @@ public class DarkSoldierController : MonoBehaviour{
     private Animator _animator;
     private SpriteRenderer _renderer;
     
-
     private Rigidbody2D _rb;
     private Vector2 _movement;
-    private void Start(){
+    private void Start() {
+        InitializeFields();
+        UpdateSoldierHealthbarDisplay();
+    }
+
+    private void InitializeFields() {
         _darkSoldierHealthCanvas = GameObject.FindGameObjectWithTag(Tags.DS_CANVAS).GetComponent<Canvas>();
         _darkSoldierHealthBar = GameObject.FindGameObjectWithTag(Tags.DS_IMAGE).GetComponent<Image>();
         _darkSoldierHealthCanvas.enabled = true;
@@ -24,9 +28,8 @@ public class DarkSoldierController : MonoBehaviour{
         _darkSoldierHealth = startingDarkSoldierHealth;
         _gameController = GameObject.FindGameObjectWithTag(Tags.GAME_CONTROLLER).GetComponent<GameController>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
-        _darkSoldierHealthBar.fillAmount = (float)_darkSoldierHealth / startingDarkSoldierHealth;
     }
-
+    
     private void Update(){
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
@@ -47,7 +50,7 @@ public class DarkSoldierController : MonoBehaviour{
 
     public void DecreaseHp(int byAmount){
         _darkSoldierHealth -= byAmount;
-        _darkSoldierHealthBar.fillAmount = (float)_darkSoldierHealth / startingDarkSoldierHealth;
+        UpdateSoldierHealthbarDisplay();
         if (_darkSoldierHealth <= 0){
             _gameController.DarkSoldierDied();
             _darkSoldierHealthCanvas.enabled = false;
@@ -56,5 +59,8 @@ public class DarkSoldierController : MonoBehaviour{
             _gameController.DarkSoldierDamaged();
         }
     }
-   
+    
+    private void UpdateSoldierHealthbarDisplay() {
+        _darkSoldierHealthBar.fillAmount = (float)_darkSoldierHealth / startingDarkSoldierHealth;
+    }
 }
