@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour {
 	private Vector3 _vectorToSecondaryTarget;
 	private GameController _gameController;
 
+	public void SubscribeToOnDestroyedCallback(Action<int> callbackAction) {
+		OnEnemyDestroyAction += callbackAction;
+	}
+	
 	public void ReceiveDamage(int damageDealt) {
 		_currentHealth -= damageDealt;
 		Instantiate(enemyData.tinyParticleSystemPrefab, transform.position, Quaternion.identity);
@@ -80,8 +84,9 @@ public class Enemy : MonoBehaviour {
 	private void OnDestroy(){
 		if (Application.IsPlaying(gameObject)){
 			Instantiate(enemyData.particleSystemPrefab, transform.position, Quaternion.identity);
-			OnEnemyDestroyAction.Invoke(enemyData.scoreWorth);
-			//todo: hook up the action with score manager when enemy is spawned somehow.
+			
+			OnEnemyDestroyAction.Invoke(enemyData.pointsForEnemy);
+			OnEnemyDestroyAction = null;
 		}
 	}
 }

@@ -10,6 +10,7 @@ public class EnemySpawner : SerializedMonoBehaviour {
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
     [SerializeField] private float portalRadius;
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Start() {
         StartCoroutine(SpawnEnemy());
@@ -18,7 +19,9 @@ public class EnemySpawner : SerializedMonoBehaviour {
     private IEnumerator SpawnEnemy(){
         for (;;){
             var spawnPosition = (Vector3) Random.insideUnitCircle * portalRadius + gameObject.transform.position ;
-            Instantiate(GetEnemyToSpawn(),spawnPosition , Quaternion.identity, enemyHolderTransform);
+            var instantiatedEnemy = Instantiate(GetEnemyToSpawn(),spawnPosition , Quaternion.identity, enemyHolderTransform);
+            var enemyScript = instantiatedEnemy.GetComponent<Enemy>();
+            scoreManager.RegisterEnemy(enemyScript);
             yield return new WaitForSeconds(timeBetweenEnemySpawn);
         }
     }

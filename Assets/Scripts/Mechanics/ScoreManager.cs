@@ -2,11 +2,13 @@
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour {
+	
+	//todo implement singleton
 	[SerializeField] private TextMeshProUGUI scoreTextDisplay;
 	private int _score;
 
 	public void RegisterEnemy(Enemy enemy) {
-		//todo subscribe to onkilled
+		enemy.SubscribeToOnDestroyedCallback(OnEnemyKilled);
 	}
 	
 	private void Start() {
