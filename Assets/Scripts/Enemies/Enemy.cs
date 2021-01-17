@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enemies;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour {
 	[SerializeField] private EnemyData enemyData;
+	private Action<int> OnEnemyDestroyAction;
 	
 	private int _currentHealth;
 	private GameObject _turret;
@@ -78,6 +80,8 @@ public class Enemy : MonoBehaviour {
 	private void OnDestroy(){
 		if (Application.IsPlaying(gameObject)){
 			Instantiate(enemyData.particleSystemPrefab, transform.position, Quaternion.identity);
+			OnEnemyDestroyAction.Invoke(enemyData.scoreWorth);
+			//todo: hook up the action with score manager when enemy is spawned somehow.
 		}
 	}
 }

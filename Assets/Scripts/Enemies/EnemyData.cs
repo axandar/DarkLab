@@ -3,6 +3,7 @@
 namespace Enemies {
 	[CreateAssetMenu(menuName = "EnemyData")]
 	public class EnemyData : ScriptableObject {
+		public int scoreWorth;
 		public int maxHealth;
 		public float speed;
 		public float minTimeForNextShake;

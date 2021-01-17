@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class EnemySpawner : SerializedMonoBehaviour{
-    [SerializeField] private Dictionary<GameObject, float> enemyPrefabDictionary;
+public class EnemySpawner : SerializedMonoBehaviour {
+    [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
     [SerializeField] private float portalRadius;
@@ -21,22 +23,11 @@ public class EnemySpawner : SerializedMonoBehaviour{
         }
     }
 
-    private GameObject GetEnemyToSpawn(){
-        float total = 0;
-        
-        foreach (var item in enemyPrefabDictionary) {
-            total += item.Value;
+    private GameObject GetEnemyToSpawn() {
+        if (enemyPrefabs == null || enemyPrefabs.Count == 0) {
+            throw new ArgumentException("No enemy prefab list provided!");
         }
-        
-        float randomPoint = Random.value * total;
-        
-        foreach (var item in enemyPrefabDictionary){
-            if (randomPoint <= item.Value) {
-                return item.Key;
-            }
-            randomPoint -= item.Value;
-        }
-        return null;
+        return enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
     }
     
     private void OnDrawGizmos() {
