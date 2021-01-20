@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Readonly;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DarkSoldierController : MonoBehaviour{

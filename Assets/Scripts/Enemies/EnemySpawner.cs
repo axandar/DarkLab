@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Readonly;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,20 +11,32 @@ public class EnemySpawner : SerializedMonoBehaviour {
     [SerializeField] private Transform enemyHolderTransform;
     [SerializeField] private float timeBetweenEnemySpawn;
     [SerializeField] private float portalRadius;
-    [SerializeField] private ScoreManager scoreManager;
+    
+    private ScoreManager _scoreManager;
 
     private void Start() {
-        StartCoroutine(SpawnEnemy());
+        CacheReferences();
+        StartCoroutine(SpawnEnemiesCoroutine());
     }
 
-    private IEnumerator SpawnEnemy(){
-        for (;;){
-            var spawnPosition = (Vector3) Random.insideUnitCircle * portalRadius + gameObject.transform.position ;
-            var instantiatedEnemy = Instantiate(GetEnemyToSpawn(),spawnPosition , Quaternion.identity, enemyHolderTransform);
-            var enemyScript = instantiatedEnemy.GetComponent<Enemy>();
-            scoreManager.RegisterEnemy(enemyScript);
+    private void CacheReferences() {
+        _scoreManager = GameObject.FindGameObjectWithTag(Tags.SCORE_MANAGER).GetComponent<ScoreManager>();
+    }
+
+    private IEnumerator SpawnEnemiesCoroutine(){
+        for (;;) {
+            var enemy = SpawnEnemyAndReturnReference();
+            var enemyScript = enemy.GetComponent<Enemy>();
+            
+            _scoreManager.RegisterEnemy(enemyScript);
             yield return new WaitForSeconds(timeBetweenEnemySpawn);
         }
+    }
+
+    private GameObject SpawnEnemyAndReturnReference() {
+        var spawnPosition = (Vector3) Random.insideUnitCircle * portalRadius + gameObject.transform.position ;
+        var instantiatedEnemy = Instantiate(GetEnemyToSpawn(),spawnPosition , Quaternion.identity, enemyHolderTransform);
+        return instantiatedEnemy;
     }
 
     private GameObject GetEnemyToSpawn() {
@@ -37,5 +50,4 @@ public class EnemySpawner : SerializedMonoBehaviour {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(gameObject.transform.position, portalRadius);
     }
-    
 }

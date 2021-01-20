@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Readonly;
 using UnityEngine;
 
 public class DarkSoldierShooting : MonoBehaviour {

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using Enemies;
+using Readonly;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour {
 	[SerializeField] private EnemyData enemyData;
-	private Action<int> OnEnemyDestroyAction;
+	private Action<int> _onEnemyDestroyedAction;
 	
 	private int _currentHealth;
 	private GameObject _turret;
@@ -16,7 +17,7 @@ public class Enemy : MonoBehaviour {
 	private GameController _gameController;
 
 	public void SubscribeToOnDestroyedCallback(Action<int> callbackAction) {
-		OnEnemyDestroyAction += callbackAction;
+		_onEnemyDestroyedAction += callbackAction;
 	}
 	
 	public void ReceiveDamage(int damageDealt) {
@@ -85,8 +86,8 @@ public class Enemy : MonoBehaviour {
 		if (Application.IsPlaying(gameObject)){
 			Instantiate(enemyData.particleSystemPrefab, transform.position, Quaternion.identity);
 			
-			OnEnemyDestroyAction.Invoke(enemyData.pointsForEnemy);
-			OnEnemyDestroyAction = null;
+			_onEnemyDestroyedAction.Invoke(enemyData.pointsForEnemy);
+			_onEnemyDestroyedAction = null;
 		}
 	}
 }

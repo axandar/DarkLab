@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Readonly;
 using UnityEngine;
 
 public class Portal : MonoBehaviour

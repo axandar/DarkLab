@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour {
 	
-	//todo implement singleton
 	[SerializeField] private TextMeshProUGUI scoreTextDisplay;
 	private int _score;
 
@@ -26,5 +25,6 @@ public class ScoreManager : MonoBehaviour {
 	
 	private void ResetScore() {
 		_score = 0;
+		UpdateScoreDisplay();
 	}
 }

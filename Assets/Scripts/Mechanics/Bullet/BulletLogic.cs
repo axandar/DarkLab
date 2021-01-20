@@ -1,4 +1,5 @@
 ﻿using System;
+using Readonly;
 using UnityEngine;
 
 public class BulletLogic : MonoBehaviour {
