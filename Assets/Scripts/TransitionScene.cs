@@ -9,6 +9,11 @@ public class TransitionScene : MonoBehaviour {
     
     public void FadeToLevel(int sceneIndex) {
         levelToLoad = sceneIndex;
+        StartCoroutine(FadeDelayedCoroutine(0.2f));
+    }
+
+    private IEnumerator FadeDelayedCoroutine(float delay) {
+        yield return new WaitForSeconds(delay);
         animator.SetTrigger("FadeOut");
     }
 
